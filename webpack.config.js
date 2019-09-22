@@ -41,6 +41,6 @@ module.exports = {
 		port: process.env.PORT || 777,
 		host: 'localhost',
 		historyApiFallback: true,
-		open: true
+		open: true,
 	}
 }
