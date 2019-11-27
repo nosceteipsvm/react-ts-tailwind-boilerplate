@@ -21,40 +21,33 @@ const Login: React.FC = () => {
 
 	return (
 		<>	
-			<div className="layout">
-				<div className="w-full max-w-xs">
-				  <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit} noValidate>
-				    <div className="mb-4">
-				      <label className="block text-gray-700 text-sm font-bold mb-2">
-				        Username
-				      </label>
-				      <input name="username" value={fields.username} onChange={(e) => handleChange(e)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username..." />
-				    </div>
-				    <div className="mb-6">
-				      <label className="block text-gray-700 text-sm font-bold mb-2">
-				        Password
-				      </label>
-				      <input name="password" value={fields.password} onChange={(e) => handleChange(e)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password..." />
-				    </div>
-				    <div className="mb-6 errors">
-				    	{
-				    		errors.map((error: string, i: number) => (
-				    			<li key={i} className="list-none">
-				    				<p className="text-red-500 text-xs italic">{error}</p>
-				    			</li>
-				    		))
-				    	}
-				    </div>
-				    <div className="flex items-center justify-between">
-				      <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-				        Sign In
-				      </button>
-				      <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-				        Forgot Password?
-				      </a>
-				    </div>
-				  </form>
-				</div>
+			<div className="flex justify-center min-w-screen w-full min-h-screen h-full gradient" style={{
+				paddingTop: '30vh'
+			}}>
+			  <div className="w-full max-w-xs">
+			    <form  className="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
+			      <h1 className="text-2xl text-center text-gray-300 mb-3 pb-4">Log into Cryptopia</h1>
+			      <div className="mb-4">
+			        <input name="username" value={fields.username} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline  bg-black border-b border-gray-800" id="username" type="text" name="username" placeholder="Email Adress"/>
+			      </div>
+			      <div className="mb-2">
+			        <input name="password" value={fields.password} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black border-b border-gray-800" id="password" type="password" name="password" placeholder="Password"/>
+			      </div>
+			      <div className="flex items-center justify-between">
+			        <button className="w-full gradient-b hover:text-indigo-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+			          Sign In
+			        </button>
+			      </div>
+			      <div className="pt-4">
+			        <a className="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-gray-600 mr-4" href="/recover_password">
+			          Create an Account
+			        </a>
+			        <a className="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-gray-600" href="/recover_password">
+			          Recover Account
+			        </a>
+			      </div>
+			    </form>
+			  </div>
 			</div>
 		</>
 	)

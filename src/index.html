@@ -1,12 +1,90 @@
+<!-- 
+    _ ,                                                                                                                           
+  ,- -                                               ,,                        ,                                 |\               
+ _||_   ' ,                                          ||            _          ||                                  \\   '          
+' ||   \\ \\ /`       '\\/\\  /'\\ \\ \\ ,._-_       ||/\\  _-_   < \, ,._-_ =||=  _-_,        /'\\ ,._-_        / \\ \\  _-_     
+  ||   ||  \\          || ;' || || || ||  ||         || || || \\  /-||  ||    ||  ||_.        || ||  ||         || || || || \\    
+  |,   ||  /\\         ||/   || || || ||  ||         || || ||/   (( ||  ||    ||   ~ ||       || ||  ||         || || || ||/      
+_-/    \\ /  \;        |/    \\,/  \\/\\  \\,        \\ |/ \\,/   \/\\  \\,   \\, ,-_-        \\,/   \\,         \\/  \\ \\,/  <> 
+                      (                                _/                                                                         
+                       -_-                                                                                                        
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/main.scss">
 	<title>ReactApp</title>
 </head>
-<body>
+<body class="gradient">
 	<div id="root"></div>
 </body>
-<script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script>
+
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+  var navaction = document.getElementById("navAction");
+  var brandname = document.getElementById("brandname");
+  var toToggle = document.querySelectorAll(".toggleColour");
+
+  document.addEventListener('scroll', function() {
+
+    scrollpos = window.scrollY;
+
+      if(scrollpos > 80){
+        header.classList.add("bg-black");
+        header.classList.add("shadow");
+      }
+      else {
+        header.classList.remove("bg-black");
+        header.classList.remove("shadow");     
+      }
+
+  });
+
+  
+</script>
+
+<script>
+  
+  var navMenuDiv = document.getElementById("nav-content");
+  var navMenu = document.getElementById("nav-toggle");
+  
+  document.onclick = check;
+  function check(e){
+    var target = (e && e.target) || (event && event.srcElement);
+    
+    //Nav Menu
+    if (!checkParent(target, navMenuDiv)) {
+    // click NOT on the menu
+    if (checkParent(target, navMenu)) {
+      // click on the link
+      if (navMenuDiv.classList.contains("hidden")) {
+        navMenuDiv.classList.remove("hidden");
+        navMenuDiv.classList.remove("bg-transparent");
+        navMenuDiv.classList.add("bg-black");
+        navMenuDiv.classList.add("text-xl");
+      } else {
+        navMenuDiv.classList.add("hidden");
+        navMenuDiv.classList.remove("text-xl");
+      }
+    } else {
+      // click both outside link and outside menu, hide menu
+      navMenuDiv.classList.add("hidden");
+    }
+    }
+    
+  }
+  function checkParent(t, elm) {
+    while(t.parentNode) {
+    if( t == elm ) {return true;}
+    t = t.parentNode;
+    }
+    return false;
+  }
+</script>
 </html>
