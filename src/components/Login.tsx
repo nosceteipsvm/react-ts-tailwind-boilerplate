@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
 	const [errors, updateErrors] = useState<string[]>(['']);
@@ -21,34 +22,84 @@ const Login: React.FC = () => {
 
 	return (
 		<>	
-			<div className="flex justify-center min-w-screen w-full min-h-screen h-full gradient" style={{
-				paddingTop: '30vh'
-			}}>
-			  <div className="w-full max-w-xs">
-			    <form  className="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
-			      <h1 className="text-2xl text-center text-gray-300 mb-3 pb-4">Log into Cryptopia</h1>
-			      <div className="mb-4">
-			        <input name="username" value={fields.username} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline  bg-black border-b border-gray-800" id="username" type="text" name="username" placeholder="Email Adress"/>
-			      </div>
-			      <div className="mb-2">
-			        <input name="password" value={fields.password} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black border-b border-gray-800" id="password" type="password" name="password" placeholder="Password"/>
-			      </div>
-			      <div className="flex items-center justify-between">
-			        <button className="w-full gradient-b hover:text-indigo-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-			          Sign In
-			        </button>
-			      </div>
-			      <div className="pt-4">
-			        <a className="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-gray-600 mr-4" href="/recover_password">
-			          Create an Account
-			        </a>
-			        <a className="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-gray-600" href="/recover_password">
-			          Recover Account
-			        </a>
-			      </div>
-			    </form>
-			  </div>
+	<div className="container mx-auto" style={{
+		marginTop: '15vh',
+		paddingBottom: '5vh',
+	}}>
+		<div className="flex justify-center px-6 my-12">
+			<div className="w-full xl:w-3/4 lg:w-11/12 flex">
+				<div
+					className="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
+					style={{
+						backgroundImage: "url('../public/wenyang--IZJXbw2Jfw-unsplash.jpg')",
+					}}
+				></div>
+				<div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+					<div className="px-6">
+						<h3 className="ml-2 pt-4 text-2xl font-semibold">
+							Sign in
+						</h3>
+					</div>	
+					<form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+						<div className="mb-4">
+							<label className="block mb-2 text-sm font-bold text-gray-700">
+								Username
+							</label>
+							<input
+								className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border shadow appearance-none focus:outline-none"
+								id="username"
+								type="text"
+								placeholder="Username"
+							/>
+						</div>
+						<div className="mb-4">
+							<label className="block mb-2 text-sm font-bold text-gray-700">
+								Password
+							</label>
+							<input
+								className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border shadow appearance-none focus:outline-none"
+								id="password"
+								type="password"
+								placeholder="Password"
+							/>
+							{/* <p className="text-xs italic text-red-500">Please choose a password.</p> */}
+						</div>
+						<div className="mb-4">
+							<input className="mr-2 leading-tight" type="checkbox" id="checkbox_id" />
+							<label className="text-sm">
+								Remember me
+							</label>
+						</div>
+						<div className="mb-6 text-center">
+							<button
+								className="w-full px-4 py-2 font-md bg-white border border-gray-800 text-gray-800 hover:bg-black hover:text-gray-200 focus:outline-none"
+								type="button"
+							>
+								Sign in
+							</button>
+						</div>
+						<hr className="mb-6 border-t" />
+						<div className="text-center">
+							<Link
+								className="inline-block text-sm text-indigo-800 align-baseline hover:text-indigo-600"
+								to="/signup"
+							>
+								Apply Now
+							</Link>
+						</div>
+						<div className="text-center">
+							<Link
+								className="inline-block text-sm text-indigo-800 align-baseline hover:text-indigo-600"
+								to="/recover"
+							>
+								Recover account
+							</Link>
+						</div>
+					</form>
+				</div>
 			</div>
+		</div>
+	</div>
 		</>
 	)
 };

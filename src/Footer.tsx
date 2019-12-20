@@ -3,65 +3,126 @@ import React from 'react';
 const Footer: React.FC = () => {
 	return (
 		<>
-<footer className="bg-black">
-	<div className="container mx-auto px-8">
+            <div className="w-full p-20 text-center flex items-center justify-center bg-gray-100">
+                <h2 className="text-4xl max-w-2xl leading-tight text-gray-900">Art party roof party glossier distillery succulents subway tile mustache.</h2>
+            </div>
 
-        <div className="w-full flex flex-col md:flex-row py-6">
-				
-			<div className="flex-1 mb-6">
-				<a className="text-white no-underline hover:no-underline font-bold text-2xl lg:text-2xl uppercase block pb-4"  href="#">
-					cryptopia
-				</a>
-				<img className="w-8 h-8 mr-2 inline-block" src="../public/bitcoin_PNG47.png" alt=""/>
-				<img className="w-10 h-10 mr-2 inline-block" src="../public/256px-Ethereum_logo_2014.svg.png" alt=""/>
-				<img className="w-10 h-10 mr-2 inline-block" src="../public/0_6o-tV4hI-DPj93qz.png" alt=""/>
-				<img className="w-8 h-8 mr-2 inline-block" src="../public/Litecoin.png" alt=""/>
-				<img className="w-8 h-8 mr-6 md:mt-2 inline-block" src="../public/880px-Brave_Basic_Attention_Token_(BAT)_Logo.svg.png" alt=""/>
+            {/* PARTNERS */}
+
+			<div className="relative rounded-lg flex flex-wrap items-center justify-center self-center bg-gray-100 shadow-xl pb-4">
+			  <button className="px-8 py-2 opacity-50 hover:opacity-100 focus:opacity-70 focus:outline-none">
+			  	<img className="w-40 h-22" src="../public/727900.png" alt=""/>
+			  </button>
+			  <button className="px-8 py-2 opacity-50 hover:opacity-100 focus:opacity-70 focus:outline-none">
+			  	<img className="w-26 h-32" src="../public/Versace_1978.png" alt=""/>
+			  </button>
+			  <button className="px-8 py-2 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none">
+			  	<img className="w-24 h-12" src="../public/boss-logo.svg" alt=""/>
+			  </button>
+			  <button className="px-8 py-2 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none">
+			  	<img className="w-40 h-22" src="../public/loreal.png" alt=""/>
+			  </button>
+			  <button className="px-8 py-2 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none">
+			  	<img className="w-40 h-22" src="../public/La_Perla_Logo_New.svg" alt=""/>
+			  </button>
 			</div>
 
-            <div className="inline-block mr-12">
-                <p className="uppercase text-gray-500 md:mb-6 font-semibold">Legal</p>
-                <ul className="list-reset mb-6">
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">Terms</a>
-                    </li>
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">Privacy</a>
-                    </li>
-                </ul>
-            </div>
-            <div className="inline-block mr-12">
-                <p className="uppercase text-gray-500 md:mb-6 font-semibold">find us on</p>
-                <ul className="list-reset mb-6">
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">Facebook</a>
-                    </li>
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">Linkedin</a>
-                    </li>
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">Twitter</a>
-                    </li>
-                </ul>
-            </div>
-            <div className="inline-block mr-12">
-                <p className="uppercase text-gray-500 md:mb-6 font-semibold">about us</p>
-                <ul className="list-reset mb-6">
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">Official Blog</a>
-                    </li>
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">About Us</a>
-                    </li>
-                    <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" className="no-underline hover:underline text-gray-400 hover:text-indigo-500">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+            {/* END PARTNERS */}
 
-</footer>
+			<footer className="p-6 w-full digital" id="footer">
+				<div className="flex flex-wrap justify-center">
+					<h1 className="text-4xl text-center text-gray-200 text-semibold mb-3">
+						Flannel biodiesel neutra heirloom
+					</h1>
+					<h5 className="text-lg text-center text-gray-600 font-medium text-semibold">
+						Actually scenester farm-to-table, ugh heirloom tacos VHS before they sold out vegan iPhone snackwave beard.
+					</h5>
+				</div>
+
+				<div className="flex-1 md:flex-wrap md:flex content-center self-center justify-center py-6 text-center text-gray-200 px-2">
+						<h1 className="text-2xl text-gray-200 text-semibold p-4 uppercase">
+							join our newsletter
+						</h1>
+					<div id="newsletter-inp">
+						<div className="flex flex-1">
+							<input className="bg-transparent border-b border-gray-200 text-lg h-12 placeholder-gray-600 text-gray-600 font-semibold p-4 focus:outline-none" type="text" placeholder="Your Email Address" spellCheck="false" />
+							<button className="bg-transparent font-bold text-white hover:text-gray-700 h-12 border-b border-white px-4 outline-none focus:outline-none">➔</button>
+						</div>
+					</div>
+				</div>
+
+				<div className="flex flex-wrap content-center self-center justify-left md:justify-center p-4 md:p-1">
+					<ul className="flex flex-wrap">
+						<li className="inline-block p-2 mr-8 md:mr-6">
+							<a href="" className="text-indigo-800 font-semibold">
+								How it Works
+							</a>
+						</li>
+						<li className="inline-block text-indigo-800 font-semibold p-2 mr-8 md:mr-6">
+							<a href="" className="text-indigo-800 font-semibold">
+								Why AEIOU
+							</a>
+						</li>
+						<li className="inline-block text-indigo-800 font-semibold p-2 mr-8 md:mr-6">
+							<a href="" className="text-indigo-800 font-semibold">
+								Company Profile
+							</a>
+						</li>
+						<li className="inline-block text-indigo-800 font-semibold p-2 mr-8 md:mr-6">
+							<a href="" className="text-indigo-800 font-semibold">
+								Careers
+							</a>
+						</li>
+						<li className="inline-block text-indigo-800 font-semibold p-2 mr-8 md:mr-6">
+							<a href="" className="text-indigo-800 font-semibold">
+								Corporate Data
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div className="flex items-center justify-between flex-wrap pt-4">	
+					<div className="flex items-center flex-shrink-0 text-white">
+						<span className="text-gray-800 text-center text-sm font-semibold">
+							&copy; AEIO Co, LLC
+						</span>
+					</div>
+
+					<div className="w-full text-center lg:flex lg:items-center lg:w-auto lg:block pt-6 lg:pt-0">
+						<ul className="list-reset lg:flex justify-end flex-1 items-center md:ml-12">
+							<li>
+								<a className="inline-block py-2 font-semibold text-indigo-800 text-sm hover:text-indigo-600 mr-3" href="#">
+									<img className="w-8 h-8" src="../public/pinterest.svg" alt=""/>
+								</a>
+								<a className="inline-block py-2 font-semibold text-indigo-800 text-sm hover:text-indigo-600 mr-3" href="#">
+									<img className="w-8 h-8" src="../public/twitter.svg" alt=""/>
+								</a>
+								<a className="inline-block py-2 font-semibold text-indigo-800 text-sm hover:text-indigo-600 mr-3" href="#">
+									<img className="w-8 h-8" src="../public/instagram.svg" alt=""/>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div className="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block pt-6 lg:pt-0">
+						<ul className="list-reset lg:flex justify-end flex-1 items-center">
+							<li>
+								<a className="inline-block py-2 font-semibold text-sm text-gray-800 hover:text-indigo-600" href="#">
+									Privacy Policy
+								</a>
+								<span className="px-2">-</span>
+								<a className="inline-block py-2 font-semibold text-sm text-gray-800 hover:text-indigo-600" href="#">
+									Ethical Code
+								</a>
+								<span className="px-2">-</span>
+								<a className="inline-block py-2 font-semibold text-sm text-gray-800 hover:text-indigo-600" href="#">
+									Cookie policy
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
 		</>
 	)
 };

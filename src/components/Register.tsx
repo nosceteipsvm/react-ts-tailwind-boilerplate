@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Register: React.FC = () => {
 	const [errors, updateErrors] = useState<string[]>(['']);
@@ -26,36 +27,121 @@ const Register: React.FC = () => {
 
 	return (
 		<>
-			<div className="flex justify-center min-w-screen w-full min-h-screen h-full gradient" style={{
-				paddingTop: '30vh'
+			<div className="container mx-auto" style={{
+				marginTop: '15vh',
+				paddingBottom: '5vh',
 			}}>
-			  <div className="w-full max-w-xs">
-			    <form  className="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
-			      <h1 className="text-2xl text-center text-gray-300 mb-3 pb-4">Sign up into Cryptopia</h1>
-			      <div className="mb-4">
-			        <input name="email" value={fields.email} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline  bg-black border-b border-gray-800" id="email" type="text" placeholder="Email Adress"/>
-			      </div>
-			      <div className="mb-4">
-			        <input name="username" value={fields.username} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-none focus:shadow-outline  bg-black border-b border-gray-800" id="username" type="username" placeholder="Username"/>
-			      </div>
-			      <div className="mb-2">
-			        <input name="password" value={fields.password} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black border-b border-gray-800" id="password" type="password" name="password" placeholder="Password"/>
-			      </div>
-			      <div className="mb-2">
-			        <input name="confirm_password" value={fields.confirm_password} onChange={(e) => handleChange(e)} className="shadow appearance-none rounded w-full py-2 px-3 text-gray-400 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black border-b border-gray-800" id="confirm_password" type="password" placeholder="Confirm Password"/>
-			      </div>
-			      <div className="flex items-center justify-between">
-			        <button className="w-full gradient-b hover:text-indigo-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-			          Sign Up
-			        </button>
-			      </div>
-			      <div className="pt-4">
-			        <a className="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-gray-600 mr-4" href="/login">
-			          Sign In
-			        </a>
-			      </div>
-			    </form>
-			  </div>
+				<div className="flex justify-center px-6 my-12">
+					<div className="w-full xl:w-3/4 lg:w-11/12 flex">
+						<div
+							className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+							style={{
+								backgroundImage: "url('../public/woman-covering-her-face-3241748.jpg')",
+							}}></div>
+						<div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
+							<div className="px-6">
+								<h3 className="ml-2 pt-4 text-2xl font-semibold">
+									Register Account
+								</h3>
+								<p className="ml-2 py-4 text-base text-gray-700">
+									If you already have an account with us, please <Link className="text-indigo-800 underline hover:text-indigo-600" to="/login">login</Link> at the login page.
+								</p>
+							</div>
+							<form className="px-8 pt-6 pb-8 mb-4 bg-white" onSubmit={ handleSubmit }>
+								<div className="mb-4 md:flex">
+									<div className="mb-4 md:mr-2 md:mb-0">
+										<label className="block mb-2 text-sm font-bold text-gray-700">
+											First Name
+										</label>
+										<input
+											className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border shadow appearance-none focus:outline-none"
+											id="firstName"
+											type="text"
+											placeholder="First Name"
+										/>
+									</div>
+									<div className="md:ml-2">
+										<label className="block mb-2 text-sm font-bold text-gray-700">
+											Last Name
+										</label>
+										<input
+											className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border shadow appearance-none focus:outline-none"
+											id="lastName"
+											type="text"
+											placeholder="Last Name"
+										/>
+									</div>
+								</div>
+								<div className="mb-4">
+									<label className="block mb-2 text-sm font-bold text-gray-700">
+										Email
+									</label>
+									<input
+										className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border shadow appearance-none focus:outline-none"
+										id="email"
+										type="email"
+										placeholder="Email"
+									/>
+								</div>
+								<div className="mb-4 md:flex">
+									<div className="mb-4 md:mr-2 md:mb-0">
+										<label className="block mb-2 text-sm font-bold text-gray-700">
+											Password
+										</label>
+										<input
+											className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border shadow appearance-none focus:outline-none"
+											id="password"
+											type="password"
+											placeholder="Password"
+										/>
+									</div>
+									<div className="md:ml-2">
+										<label className="block mb-2 text-sm font-bold text-gray-700">
+											Confirm Password
+										</label>
+										<input
+											className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border shadow appearance-none focus:outline-none"
+											id="c_password"
+											type="password"
+											placeholder="Confirm Password"
+										/>
+									</div>
+								</div>
+								<div className="mb-4">
+									<label className="text-sm text-gray-800 mr-2">
+										I have read and agree to the <a className="text-gray-900 hover:underline">Privacy Policy</a>
+									</label>
+									<input className="leading-tight" type="checkbox" id="checkbox_id" />
+								</div>
+								<div className="mb-6 text-center">
+									<button
+										className="w-full px-4 py-2 font-md bg-white border border-gray-800 text-gray-800 hover:bg-black hover:text-gray-200 focus:outline-none"
+										type="button"
+									>
+										Register Account
+									</button>
+								</div>
+								<hr className="mb-6 border-t" />
+								<div className="text-center">
+									<Link
+										className="inline-block text-sm text-indigo-800 align-baseline hover:text-indigo-600"
+										to="/recover"
+									>
+										Forgot Password?
+									</Link>
+								</div>
+								<div className="text-center">
+									<Link
+										className="inline-block text-sm text-indigo-800 align-baseline hover:text-indigo-600"
+										to="/signin"
+									>
+										Already have an account? Login
+									</Link>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 		</>
 	)

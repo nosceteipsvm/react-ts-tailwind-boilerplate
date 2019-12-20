@@ -17,74 +17,67 @@ _-/    \\ /  \;        |/    \\,/  \\/\\  \\,        \\ |/ \\,/   \/\\  \\,   \\
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/main.scss">
-	<title>ReactApp</title>
+  <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<title>AEIOU</title>
 </head>
-<body class="gradient">
+<body>
 	<div id="root"></div>
 </body>
 <script>
+  // toggle the menu
+  document.querySelector('#nav-toggle').addEventListener('click', async () => {
+    const header = await document.querySelector('#header');
 
-  var scrollpos = window.scrollY;
-  var header = document.getElementById("header");
-  var navcontent = document.getElementById("nav-content");
-  var navaction = document.getElementById("navAction");
-  var brandname = document.getElementById("brandname");
-  var toToggle = document.querySelectorAll(".toggleColour");
+    if(header.classList.contains("bg-white"))
+    {
+      header.classList.remove("bg-white");  
+    }
+    else
+    {
+      header.classList.add("bg-white");  
+    }
+    
 
-  document.addEventListener('scroll', function() {
-
-    scrollpos = window.scrollY;
-
-      if(scrollpos > 80){
-        header.classList.add("bg-black");
-        header.classList.add("shadow");
-      }
-      else {
-        header.classList.remove("bg-black");
-        header.classList.remove("shadow");     
-      }
-
+    const ctn = await document.querySelectorAll("#nav-content");
+    ctn.forEach(async (content) => {
+      await content.classList.toggle("hidden");
+    })
   });
 
-  
-</script>
+  (async function(){
+    const header = await document.querySelector('#header');
+    const hero_info = await document.querySelector('#hero-content');
 
-<script>
-  
-  var navMenuDiv = document.getElementById("nav-content");
-  var navMenu = document.getElementById("nav-toggle");
-  
-  document.onclick = check;
-  function check(e){
-    var target = (e && e.target) || (event && event.srcElement);
-    
-    //Nav Menu
-    if (!checkParent(target, navMenuDiv)) {
-    // click NOT on the menu
-    if (checkParent(target, navMenu)) {
-      // click on the link
-      if (navMenuDiv.classList.contains("hidden")) {
-        navMenuDiv.classList.remove("hidden");
-        navMenuDiv.classList.remove("bg-transparent");
-        navMenuDiv.classList.add("bg-black");
-        navMenuDiv.classList.add("text-xl");
-      } else {
-        navMenuDiv.classList.add("hidden");
-        navMenuDiv.classList.remove("text-xl");
-      }
-    } else {
-      // click both outside link and outside menu, hide menu
-      navMenuDiv.classList.add("hidden");
+    TweenMax.from(header, 1.2, {
+      y: 50,
+      alpha: 1
+    })
+
+    TweenMax.from(hero_info, 1.2, {
+      x: 150,
+      alpha: 1
+    })
+
+    if (window.scrollY > 30){
+        header.classList.remove("md:bg-transparent");
+        header.classList.add("bg-white");
+        header.classList.add("shadow");
     }
-    }
-    
-  }
-  function checkParent(t, elm) {
-    while(t.parentNode) {
-    if( t == elm ) {return true;}
-    t = t.parentNode;
-    }
-    return false;
-  }
+
+    document.addEventListener('scroll', function() {
+      scrollpos = window.scrollY;
+
+        if(scrollpos > 30){
+          header.classList.remove("md:bg-transparent");
+          header.classList.add("bg-white");
+          header.classList.add("shadow");
+        }
+        else {
+          header.classList.remove("bg-white");
+          header.classList.add("md:bg-transparent");
+          header.classList.remove("shadow");     
+        }
+    });
+  }());
 </script>
 </html>
